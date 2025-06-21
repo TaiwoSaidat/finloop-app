@@ -1,6 +1,6 @@
 "use client";
 import LogInForm from "@/components/FormComponents/LoginForm";
-import Header from "@/components/FormComponents/HomeComponent/Header";
+import Header from "@/components/HomeComponent/Header";
 
 export default function Home() {
   return (

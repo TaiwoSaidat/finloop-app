@@ -7,7 +7,6 @@ import homeImage from "../../assets/homeImage.svg";
 const LogInForm = () => {
   return (
     <>
-    
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 space-y-5  ">
         {/* left side */}
         <div className="bg-white rounded-2xl border ">
@@ -47,20 +46,23 @@ const LogInForm = () => {
 
               {/* Forgot Password */}
               <Link href="/">
-                <p className=" text-blue-light hover:text-blue-dark">FORGOT PASSWORD</p>
+                <p className=" text-blue-light hover:text-blue-dark">
+                  FORGOT PASSWORD
+                </p>
               </Link>
               {/* button */}
-              <button
-                type="submit"
-                className=" w-full md:w-[80%] lg:w-[80%]  bg-blue-light hover:bg-blue-dark text-white mt-12 py-3 border border-blue-light rounded-lg"
-              >
-                LOG IN
-              </button>
+              <Link href="/dashboard">
+                <button
+                  type="submit"
+                  className=" w-full md:w-[80%] lg:w-[80%]  bg-blue-light hover:bg-blue-dark text-white mt-12 py-3 border border-blue-light rounded-lg"
+                >
+                  LOG IN
+                </button>
+              </Link>
             </form>
           </div>
         </div>
       </div>
-      
     </>
   );
 };

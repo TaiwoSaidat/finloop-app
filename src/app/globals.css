@@ -10,8 +10,12 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* --background: #ffffff;*/
+  /* --foreground: #0a0a0a; */
+  --background: #32353f8d;
+  --foreground: #213f7d;
+  /* --background: #39cdcc; */
+  /* --background: #7fe0e0; */
 }
 
 @theme inline {
@@ -21,24 +25,24 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 html,
 body {
   max-width: 100%;
   overflow-x: hidden;
-  /* scroll-behavior: smooth;    */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+
+@theme {
+  --color-blue-dark: #213f7d;
+  --color-blue-light: #39cdcc;
+  --color-blue-lighter: #7fe0e0;
+  --color-user-card:#fff;
 }
 
 @layer utilities {
@@ -57,6 +61,10 @@ body {
     @apply flex items-center justify-between;
   }
 
+  .flexAround {
+    @apply flex items-center justify-around;
+  }
+
   .flexStart {
     @apply flex items-center justify-start;
   }
@@ -70,13 +78,50 @@ body {
   }
 
   /* FONTS */
+
+  .small-10 {
+    @apply text-[10px] font-[400] leading-[40px];
+  }
+
+  .small-12 {
+    @apply text-[12px] font-[500] leading-[100%]
+  }
+
+  .small-16 {
+    @apply text-[16px] font-[400] leading-[100%];
+  }
+
+  .regular-14 {
+    @apply text-[14px] font-[500] leading-[100%];
+  }
+
   .regular-20 {
     @apply text-[20px] font-[400] leading-[40px];
+  }
+
+  .regular-24 {
+    @apply text-[24px] font-[500] leading-[100%];
+  }
+
+  .regular-30 {
+    @apply text-[30px] font-[700] leading-[100%];
+  }
+
+  .large-24 {
+    @apply text-[24px] font-[600] leading-[100%];
+  }
+
+  .large-30 {
+    @apply text-[30px] font-[700] leading-[40px];
   }
 
   .large-40 {
     @apply text-[40px] font-[700] leading-10;
   }
+
+  /* .larger-48{
+    @apply text-[48px] font-[700] leeading-[40px]
+  } */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -88,10 +133,4 @@ body {
 .hide-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-}
-
-@theme {
-  --color-blue-dark: #213f7d;
-  --color-blue-light: #39cdcc;
-  --color-blue-lighter: #39cdcc;
 }
