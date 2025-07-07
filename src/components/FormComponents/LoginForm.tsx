@@ -1,15 +1,41 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import homeImage from "../../assets/homeImage.svg";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+import { useForm } from "react-hook-form";
+import { IFormInput } from "@/types/dashboard";
+import { useRouter } from "next/navigation";
+
+const schema = yup.object().shape({
+  email: yup.string().email("invalid email").required("email is required"),
+  password: yup.string().min(6).required("passwrod is required"),
+});
 
 const LogInForm = () => {
+  const {
+    register,
+    handleSubmit,
+    // setValue,
+    formState: { errors },
+  } = useForm<IFormInput>({ resolver: yupResolver(schema) });
+  const router = useRouter();
+
+  const onSubmit = (data: IFormInput) => {
+    console.log("data is", data);
+    router.push('/dashboard');
+  };
+
+  // useEffect(() => {
+  //   setValue("email", "a@b.gmail.com");
+  // }, [setValue]);
   return (
     <>
       <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 space-y-5  ">
         {/* left side */}
-        <div className="bg-white rounded-2xl border ">
+        <div className="bg-white rounded-2xl  ">
           <Image
             src={homeImage}
             alt=""
@@ -26,23 +52,43 @@ const LogInForm = () => {
 
           {/* form */}
           <div className=" ">
-            <form action="#" method="post" className=" space-y-8 ">
+            <form
+              // action="#"
+              // method="post"
+              className=" space-y-8 "
+              onSubmit={handleSubmit(onSubmit)}
+            >
               {/* Email */}
-              <input
-                type="email"
-                name=""
-                id=""
-                placeholder="Email"
-                className="inputClass border border-white"
-              />
+              <div className="">
+                <input
+                  {...register("email")}
+                  type="email"
+                  name="email"
+                  id=""
+                  placeholder="Enter Your Email"
+                  className="inputClass border border-white outline-0"
+                />
+                {errors.email && (
+                  <p className="text-red-500 text-sm">{errors.email.message}</p>
+                )}
+              </div>
+
               {/* Password */}
-              <input
-                type="password"
-                name=""
-                id=""
-                placeholder="Password"
-                className="inputClass border border-white"
-              />
+              <div className="">
+                <input
+                  {...register("password")}
+                  type="password"
+                  name="password"
+                  id=""
+                  placeholder="Enter Your Password"
+                  className="inputClass border border-white outline-0"
+                />
+                {errors.password && (
+                  <p className="text-red-500 text-sm">
+                    {errors.password.message}
+                  </p>
+                )}
+              </div>
 
               {/* Forgot Password */}
               <Link href="/">
@@ -51,14 +97,14 @@ const LogInForm = () => {
                 </p>
               </Link>
               {/* button */}
-              <Link href="/dashboard">
-                <button
-                  type="submit"
-                  className=" w-full md:w-[80%] lg:w-[80%]  bg-blue-light hover:bg-blue-dark text-white mt-12 py-3 border border-blue-light rounded-lg"
-                >
-                  LOG IN
-                </button>
-              </Link>
+              {/* <Link href="/dashboard"> */}
+              <button
+                type="submit"
+                className=" w-full md:w-[80%] lg:w-[80%]  bg-blue-light hover:bg-blue-dark text-white mt-12 py-3 border border-blue-light hover:border-blue-dark rounded-lg"
+              >
+                LOG IN
+              </button>
+              {/* </Link> */}
             </form>
           </div>
         </div>

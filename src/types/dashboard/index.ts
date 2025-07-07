@@ -35,3 +35,9 @@ export type UsersProps = {
 //   path?: string;
 //   icon?: IconType;
 // };
+
+
+export interface IFormInput {
+  email: string;
+  password: string;
+}
