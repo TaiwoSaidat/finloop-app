@@ -8,6 +8,12 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { IFormInput } from "@/types/dashboard";
 import { useRouter } from "next/navigation";
+import { Roboto, Michroma } from "next/font/google";
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight:['400']
+});
 
 const schema = yup.object().shape({
   email: yup.string().email("invalid email").required("email is required"),
@@ -44,7 +50,7 @@ const LogInForm = () => {
         </div>
 
         {/* right side */}
-        <div className=" px-10 py-6 rounded-2xl space-y-8">
+        <div className={`${roboto.className} px-10 py-6 rounded-2xl space-y-8`}>
           <div className="text-blue-dark space-y-4 py-6">
             <h3 className=" large-40 ">Welcome!</h3>
             <p className=" regular-20 ">Enter details to login.</p>

@@ -1,23 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Roboto } from "next/font/google";
+import { Work_Sans, Poppins, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const roboto = Roboto({
-  weight: '400',
-  variable: '--font-roboto-sans',
-  subsets:['latin']
+const workSans = Work_Sans({
+  subsets: ['latin'],
+  variable: '--font-work-sans',
 })
+
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
+
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 export const metadata: Metadata = {
   title: "Finloop",
@@ -33,8 +31,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-      className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} antialiased`}
-      // className={`${roboto.variable} antialised` }
+        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={workSans.variable}
       >
         {children}
       </body>
