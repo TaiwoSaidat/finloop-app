@@ -7,10 +7,24 @@ import search from "../../../../assets/search.png";
 import bell from "@/assets/bell.png";
 import profile from "@/assets/profile.png";
 
-const DashboardHeader = () => {
+const DashboardHeader = ({
+  sideBarOpen,
+  toggleSideBar,
+}: {
+  sideBarOpen: boolean;
+  toggleSideBar: () => void;
+}) => {
   return (
     <>
-      <div className="w-full border-4 bg-grey-800  grid md:grid-cols-2 py-4 border-red-500 ">
+      <div className="w-full border-4 bg-grey-800  grid grid-cols-2 md:grid-cols-3 py-4 border-red-500 ">
+        {/* logo */}
+        <div className="flex gap-4 py-4 ">
+          <Link href="/dashboard">
+            <Image src={logo} alt="" width={36} height={16} />
+          </Link>
+          <p className="regular-20  ">finloop</p>
+        </div>
+
         {/* search */}
         <div className="hidden md:flex justify-start">
           <form
@@ -23,17 +37,14 @@ const DashboardHeader = () => {
               placeholder="Search for anything"
               className="  small-16 mx-4 text-gray-300"
             />
-            {/* <div className="  bg-black flexCenter rounded"> */}
             <Image
               alt="arrow"
               src={search}
               className="w-8 h-8 p-2 bg-blue-dark rounded-r-md "
             />
-            {/* </div> */}
           </form>
         </div>
 
-        {/* <div className="flex justify-center"> */}
         <div className="flexBetween px-12  ">
           <p className="  underline ">
             <Link href="https://github.com/TaiwoSaidat/finloop-app">Docs</Link>
@@ -57,32 +68,30 @@ const DashboardHeader = () => {
             <IoIosArrowDown className="hidden md:block" />
           </div>
 
-          <div className="md:hidden lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="#1f1f1f"
-            >
-              <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-            </svg>
-            <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24px"
-                        viewBox="0 -960 960 960"
-                        width="24px"
-                        fill="#1f1f1f"
-                      >
-                        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
-                      </svg>
-          </div>
+          <button onClick={toggleSideBar} className="md:hidden">
+            {sideBarOpen ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#213f7d"
+              >
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+                fill="#213f7d"
+              >
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+              </svg>
+            )}
+          </button>
         </div>
-        {/* </div> */}
-
-        {/* <div className="bg-red-800">
-          <p className=""> DashboardHeader Header</p>{" "}
-        </div> */}
       </div>
     </>
   );

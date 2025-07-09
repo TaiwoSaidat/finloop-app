@@ -1,3 +1,4 @@
+import * as FaIcons from 'react-icons/fa'
 import { HiUser, HiUsers } from "react-icons/hi2";
 import { FaRegHandshake, FaUsers } from "react-icons/fa";
 import { GiReceiveMoney } from "react-icons/gi";
@@ -14,7 +15,9 @@ export const CUSTOMERS = [
     id: 1,
     title: "Users",
     path: "/",
+    // path: "/dashboard/users",
     icon: HiUsers,
+
   },
   {
     id: 2,

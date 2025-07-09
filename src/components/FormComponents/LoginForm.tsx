@@ -59,8 +59,6 @@ const LogInForm = () => {
           {/* form */}
           <div className=" ">
             <form
-              // action="#"
-              // method="post"
               className=" space-y-8 "
               onSubmit={handleSubmit(onSubmit)}
             >

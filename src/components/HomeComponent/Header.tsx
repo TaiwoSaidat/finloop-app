@@ -4,7 +4,7 @@ import logo from "../../assets/logo.png";
 import Link from "next/link";
 import { Roboto, Michroma } from "next/font/google";
 
-const roboto = Michroma({
+const roboto = Roboto({
   subsets: ["latin"],
   weight:['400']
 });
@@ -14,7 +14,6 @@ const Header = () => {
       {/* m-12 p-6 h-screen gap-12 md:gap-22 lg:gap-24 */}
       <div
         className={`${roboto.className} flex mx-4 md:mx-12 lg:mx-14 gap-4 py-6 `}
-        // className= 'flex mx-4 md:mx-12 lg:mx-14 gap-4 py-6'
       >
         <Link href="/">
           <Image src={logo} alt="" className=" w-6 md:w-8 lg:w-12" />
