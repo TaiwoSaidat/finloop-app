@@ -16,17 +16,17 @@ const DashboardHeader = ({
 }) => {
   return (
     <>
-      <div className="w-full border-4 bg-grey-800  grid grid-cols-2 md:grid-cols-3 py-4 border-red-500 ">
+      <div className="w-full border-2 bg-grey-800  grid grid-cols-2 md:grid-cols-3 py-4  items-center ">
         {/* logo */}
-        <div className="flex gap-4 py-4 ">
+        <div className="flex gap-4 items-center px-4 ">
           <Link href="/dashboard">
-            <Image src={logo} alt="" width={36} height={16} />
+            <Image src={logo} alt="" width={24} height={16}  />
           </Link>
-          <p className="regular-20  ">finloop</p>
+          <p className="regular-20 hidden md:block ">finloop</p>
         </div>
 
         {/* search */}
-        <div className="hidden md:flex justify-start">
+        <div className="hidden  md:flex justify-start ">
           <form
             action="submit"
             className="border-2 border-blue-dark flexBetween rounded-lg "
@@ -45,7 +45,8 @@ const DashboardHeader = ({
           </form>
         </div>
 
-        <div className="flexBetween px-12  ">
+        {/* third grid */}
+        <div className="flexBetween px-12 gap-3 ">
           <p className="  underline ">
             <Link href="https://github.com/TaiwoSaidat/finloop-app">Docs</Link>
           </p>
@@ -53,21 +54,22 @@ const DashboardHeader = ({
           <Image
             src={bell}
             alt="notification"
-            className="border-white rounded-3xl w-6 h-6"
+            className=" border-white rounded-3xl w-6 h-6 "
           />
-
-          <div className="md:flex justify-between items-center gap-3">
+          {/* profile */}
+          <div className="md:flex  justify-between items-center gap-3">
             <Image
               src={profile}
               alt="profile"
               width={24}
               height={24}
-              className="rounded-2xl "
+              className=" rounded-2xl "
             />
             <p className="hidden md:block">Adedeji</p>
             <IoIosArrowDown className="hidden md:block" />
           </div>
 
+          {/* menu and close */}
           <button onClick={toggleSideBar} className="md:hidden">
             {sideBarOpen ? (
               <svg

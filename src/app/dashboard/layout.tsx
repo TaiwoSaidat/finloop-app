@@ -11,22 +11,19 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   };
   return (
     <>
-      {/*flex md:flex-row md:overflow-hidden */}
-      <div className="flex flex-col">
+      <div className="flex flex-col h-screen">
         <div className=" flex-1 ">
           <DashboardHeader
             sideBarOpen={sideBarOpen}
             toggleSideBar={toggleSideBar}
           />
         </div>
-        <div className="flex flx-1 overflow-hidden ">
-          {/* hidden md:block" */}
-          {/* <div className=""> */}
-          {/* </div> */}
-          <SideBar isOpen={sideBarOpen} />
-          <main className="flex-1 overflow-y-auto p-6">{children}</main>
-
-          {/* this is the app page.tsx below */}
+        <div className="flex flex-1  ">
+       
+          <SideBar isOpen={sideBarOpen}  />
+          <main className="flex-1 overflow-y-auto p-6 w-full border-6 border-green-400">
+            {children}
+          </main>
         </div>
       </div>
     </>

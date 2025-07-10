@@ -14,8 +14,7 @@ export const CUSTOMERS = [
   {
     id: 1,
     title: "Users",
-    path: "/",
-    // path: "/dashboard/users",
+    path: "/dashboard/users",
     icon: HiUsers,
 
   },
@@ -161,6 +160,45 @@ export const USERS = [
     icon: savings,
     title: "Users with Savings",
     description: '102,453',
+  },
+];
+
+export const ORGANIZATION = [
+  {
+    organization: "Lendsqr",
+    username: "Adedeji",
+    email: "adedeji.lendsqr.com",
+    phoneNumber: "0807890371",
+    dateJoined: "2020-05-15",
+    timeJoined: "10:00 am",
+    status: "Inactive",
+  },
+  {
+    organization: "Irorun",
+    username: "Debby Ogana",
+    email: "debby@irorun.com",
+    phoneNumber: "08160780928",
+    dateJoined: "2020-01-01",
+    timeJoined: "10:00 am",
+    status: "Pending",
+  },
+  {
+    organization: "Lendstar",
+    username: "Grace EFfiorn",
+    email: "grace@lendstar.com",
+    phoneNumber: "+2348090000000",
+    dateJoined: "2020-01-01",
+    timeJoined: "10:00 am",
+    status: "Blacklisted",
+  },
+  {
+    organization: "Lendsqr",
+    username: "Tosin Dokunmu",
+    email: "tosin@lendsqr.com",
+    phoneNumber: "+2348090000000",
+    dateJoined: "2020-01-01",
+    timeJoined: "10:00 am",
+    status: "Active",
   },
 ];
 
