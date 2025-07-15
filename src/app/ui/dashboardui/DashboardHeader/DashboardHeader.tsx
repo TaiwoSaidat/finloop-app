@@ -16,7 +16,7 @@ const DashboardHeader = ({
 }) => {
   return (
     <>
-      <div className="w-full border-2 bg-grey-800  grid grid-cols-2 md:grid-cols-3 py-4  items-center ">
+      <div className="w-full border-2 grid grid-cols-2 md:grid-cols-3 py-4  items-center ">
         {/* logo */}
         <div className="flex gap-4 items-center px-4 ">
           <Link href="/dashboard">

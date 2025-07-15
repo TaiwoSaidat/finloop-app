@@ -1,5 +1,6 @@
-import DashboardColumn from "@/components/DashboardComponents/DashboardColumn";
-import { USERS } from "@/constants";
+import UserStatsCard from "@/components/DashboardComponents/UserStatsCard";
+import { USERSTATS } from "@/constants";
+import UserDashboard from '../../ui/usersui/UserDashboard'
 import React from "react";
 
 const page = () => {
@@ -8,8 +9,8 @@ const page = () => {
       <div className="border-6 border-green-400 space-y-8">
         <p className=" regular-24">Users</p>
         <div className=" flexBetween flex-wrap gap-2">
-          {USERS.map((item) => (
-            <DashboardColumn
+          {USERSTATS.map((item) => (
+            <UserStatsCard
               title={item.title}
               key={item.title}
               description={item.description}
@@ -18,9 +19,10 @@ const page = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-7">
+        <div className="">
           users
         </div>
+        <UserDashboard />
       </div>
     </>
   );

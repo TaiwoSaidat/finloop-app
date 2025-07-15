@@ -13,10 +13,15 @@ const SideBar = ({ isOpen }: { isOpen: React.ReactNode }) => {
   return (
     <>
       <aside
-        // className="w-64   text-white p-4"
-        className={`fixed md:static top-0 left-0 h-full  w-64 border-2 py-6 transition-transform duration-300 z-40  overflow-y-auto
+        className={`fixed bg-blue-100 md:static top-0 left-0 h-full  w-64 border-2 py-2 transition-transform duration-300 z-40  overflow-y-auto
           ${isOpen ? "translate-x-0 " : "-translate-x-full"} md:translate-x-0`}
       >
+         <div className="flex gap-4 items-center px-4 md:hidden lg:hidden ">
+          <Link href="/dashboard">
+            <Image src={logo} alt="" width={24} height={16}  />
+          </Link>
+          <p className="regular-20  ">finloop</p>
+        </div>
         <div className="space-y-12">
           <div className="flex items-center space-x-2 small-16 py-2 px-6 hover:opacity-50 hover:bg-blue-light   ">
             <RiBriefcase3Fill />

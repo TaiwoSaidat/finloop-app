@@ -12,7 +12,8 @@
 :root {
   /* --background: #ffffff;*/
   /* --foreground: #0a0a0a; */
-  --background: #32353f8d;
+  /* --background: #32353f8d; */
+  --background: #1332978d;
   --foreground: #213f7d;
   /* --font-sans: var(--font-michroma) */
   /* --background: #39cdcc; */
@@ -41,6 +42,7 @@ body {
   --color-blue-light: #39cdcc;
   --color-blue-lighter: #7fe0e0;
   --color-user-card: #fff;
+  
 }
 
 @layer utilities {

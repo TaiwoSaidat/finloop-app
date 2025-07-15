@@ -2,7 +2,7 @@ import { UsersProps } from "@/types/dashboard";
 import Image from "next/image";
 import React from "react";
 
-const DashboardColumn = ({ icon, title, description }: UsersProps) => {
+const UserStatsCard = ({ icon, title, description }: UsersProps) => {
   return (
     <>
       <div className="  w-[240px]  bg-white p-4 space-y-4 rounded-xl">
@@ -14,4 +14,4 @@ const DashboardColumn = ({ icon, title, description }: UsersProps) => {
   );
 };
 
-export default DashboardColumn;
+export default UserStatsCard;
