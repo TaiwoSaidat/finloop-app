@@ -140,7 +140,7 @@ export const SETTINGS = [
   },
 ];
 
-export const USERS = [
+export const USERSTATS = [
   {
     icon: users,
     title: "Users",
@@ -163,7 +163,7 @@ export const USERS = [
   },
 ];
 
-export const ORGANIZATION = [
+export const USERDASHBOARD = [
   {
     organization: "Lendsqr",
     username: "Adedeji",
