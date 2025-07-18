@@ -16,20 +16,34 @@
   /* --background: #ffffff;*/
   /* --foreground: #0a0a0a; */
   /* --background: #32353f8d; */
-  /* --font-sans: var(--font-michroma) */
+  --font-sans: var(--font-michroma)
   /* --background: #39cdcc; */
   /* --background: #7fe0e0; */
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.13 0.028 261.692);
-  --card: oklch(1 0 0);
+  /* --background: oklch(1 0 0); */
+  --background: #32353f8d;
+  /* --foreground: oklch(0.13 0.028 261.692); */
+  --foreground: #213f7d;
+  /* 1 */
+  /* --card: oklch(1 0 0);
   --card-foreground: oklch(0.13 0.028 261.692);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.13 0.028 261.692);
   --primary: oklch(0.21 0.034 264.665);
   --primary-foreground: oklch(0.985 0.002 247.839);
   --secondary: oklch(0.967 0.003 264.542);
-  --secondary-foreground: oklch(0.21 0.034 264.665);
+  --secondary-foreground: oklch(0.21 0.034 264.665); */
+
+  /* 2 */
+  --card: #32353f8d;
+  --card-foreground: #213f7d;
+  --popover: #32353f8d;
+  --popover-foreground: #213f7d;
+  --primary: #32353f8d;
+  --primary-foreground: #213f7d;
+  --secondary: #32353f8d;
+  --secondary-foreground: #213f7d;
+
   --muted: oklch(0.967 0.003 264.542);
   --muted-foreground: oklch(0.551 0.027 264.364);
   --accent: oklch(0.967 0.003 264.542);
@@ -98,7 +112,11 @@ body {
 }
 
 body {
-  font-family: var(--font-work-sans), sans-serif;
+  /*  --font-sans: var(--font-michroma) */
+  /* font-family: var(--font-work-sans), sans-serif; */
+  /* font-family: var(--font-michroma), sans-serif; */
+  font-family: var(--font-michroma), sans-serif;
+
 }
 
 @theme {
@@ -106,7 +124,6 @@ body {
   --color-blue-light: #39cdcc;
   --color-blue-lighter: #7fe0e0;
   --color-user-card: #fff;
-
 }
 
 @layer utilities {
@@ -194,7 +211,6 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-
 
 /* ---break---*/
 .dark {

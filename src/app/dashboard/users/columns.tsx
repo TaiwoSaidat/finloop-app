@@ -37,7 +37,7 @@ export const columns: ColumnDef<UsersProp>[] = [
         <Button
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          className=" justify-start"
+          // className="flex w-full justify-start"
         >
           Organization
           <CgSortAz className="h-4 w-4" />

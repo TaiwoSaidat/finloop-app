@@ -24,6 +24,7 @@ import {
   MdOutlineArrowForwardIos,
 } from "react-icons/md";
 import { useState } from "react";
+import { DataTablePagination } from "./data-table-pagination";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -102,9 +103,8 @@ export function DataTable<TData, TValue>({
         </Table>
       </div>
 
-      
       {/* pagination */}
-      <div className="flex items-center justify-end space-x-2 py-4">
+      {/* <div className="flex items-center justify-end space-x-2 py-4">
         <Button
           variant="outline"
           size="sm"
@@ -121,7 +121,9 @@ export function DataTable<TData, TValue>({
         >
           <MdOutlineArrowForwardIos />
         </Button>
-      </div>
+      </div> */}
+      {/* pagination again? */}
+      <DataTablePagination table={table} />
     </>
   );
 }
