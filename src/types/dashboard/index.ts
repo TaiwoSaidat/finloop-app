@@ -7,7 +7,7 @@ import { IconType } from "react-icons";
 //     path: string;
 //     icon:IconType
 // }
-// Props for customer, business and settings
+// Props for customer, business and settings sidebar items
 export type CustomerProps = {
     id: number;
   title: string;
@@ -21,6 +21,24 @@ export type UsersProps = {
   description: string;
 };
 
+export interface IFormInput {
+  email: string;
+  password: string;
+}
+
+export type UsersProp = {
+  createdAt: string;
+  name: string;
+  avatar: string | StaticImageData;
+  email: string;
+  organization: string;
+  userName: string;
+  phoneNumber: string;
+  status: "pending" | "processing" | "success" | "failed";
+  id: string;
+  // address: string;
+  // updatedAt: string;
+};
 
 // export type BusinessrProps = {
 //   id?: number;
@@ -37,7 +55,5 @@ export type UsersProps = {
 // };
 
 
-export interface IFormInput {
-  email: string;
-  password: string;
-}
+
+
