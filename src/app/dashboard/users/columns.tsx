@@ -16,7 +16,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+// import { IoFilter } from "react-icons/io5";
 import { CgSortAz } from "react-icons/cg";
+import { StatusBadgeRow } from "@/components/DashboardComponents/StatusBadgeRow";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -118,7 +120,7 @@ export const columns: ColumnDef<UsersProp>[] = [
   },
   //   don't forget to change to status
   {
-    accessorKey: "name",
+    accessorKey: "status",
     // header: "Name",
     header: ({ column }) => {
       return (
@@ -126,11 +128,12 @@ export const columns: ColumnDef<UsersProp>[] = [
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Name
+          Status
           <CgSortAz className="h-4 w-4" />
         </Button>
       );
     },
+    cell: ({ row }) => <StatusBadgeRow status={row.original.status} />,
   },
   {
     id: "actions",

@@ -1,21 +1,18 @@
 import UserStatsCard from "@/components/DashboardComponents/UserStatsCard";
 import { USERSTATS } from "@/constants";
-import UserDashboard from "../../ui/usersui/UserDashboard";
 import React from "react";
+import { DataTable } from "@/components/data-table";
+import { columns } from "./columns";
+import { getUsers } from "@/lib/api";
 
-const page = () => {
+const page = async () => {
+  const data = await  getUsers();
+
   return (
     <>
-      <div className="border-6 border-green-400 space-y-8">
-        
-        <div className=" border-4 border-red-500">
-          <p className="">users</p>
-                <UserDashboard />
-
-        </div>
-        
+      <div className=" space-y-8">
         <p className=" regular-24">Users</p>
-        <div className=" flexBetween flex-wrap gap-2">
+        <div className="  flexBetween flex-wrap gap-2">
           {USERSTATS.map((item) => (
             <UserStatsCard
               title={item.title}
@@ -24,11 +21,19 @@ const page = () => {
               icon={item.icon}
             />
           ))}
+          {/* {data.map((user: any) => (
+            <UserStatsCard
+              title={user.name}
+              key={user.id}
+              description={user.email}
+              icon={user.avatar}
+            />
+          ))} */}
         </div>
 
-        {/* <div className="border-2"> */}
-        {/* </div> */}
-        
+        <div className="  ">
+          <DataTable columns={columns} data={data} />
+        </div>
       </div>
     </>
   );

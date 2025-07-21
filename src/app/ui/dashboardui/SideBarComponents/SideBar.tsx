@@ -8,8 +8,16 @@ import { CustomerProps } from "@/types/dashboard";
 import { MdOutlineHouse } from "react-icons/md";
 import { RiBriefcase3Fill } from "react-icons/ri";
 import { IoIosArrowDown } from "react-icons/io";
+// import { getUsers } from "@/lib/api";
 
-const SideBar = ({ isOpen }: { isOpen: React.ReactNode }) => {
+const SideBar =  ({ isOpen }: { isOpen: React.ReactNode }) => {
+//   const data = await getUsers()
+//   const organizations = [...new Set(data.map((user: any) => user.organization))];
+//  console.log(organizations)
+
+ 
+
+  
   return (
     <>
       <aside
@@ -28,6 +36,14 @@ const SideBar = ({ isOpen }: { isOpen: React.ReactNode }) => {
             <span>Switch Organisation</span>
             <IoIosArrowDown />
           </div>
+
+          {/* {
+            organizations.map((org: any, index) => (
+              
+                <span>{org}</span>
+             
+            ))
+          } */}
 
           <div>
             <Link

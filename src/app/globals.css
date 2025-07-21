@@ -35,8 +35,8 @@
   --secondary-foreground: oklch(0.21 0.034 264.665); */
 
   /* 2 */
-  --card: #32353f8d;
-  --card-foreground: #213f7d;
+  --card: var(--color-background);
+  --card-foreground: var(--color-foreground);
   --popover: #32353f8d;
   --popover-foreground: #213f7d;
   --primary: #32353f8d;
@@ -66,6 +66,28 @@
   --sidebar-border: oklch(0.928 0.006 264.531);
   --sidebar-ring: oklch(0.707 0.022 261.325);
 }
+
+
+@theme {
+  --color-blue-dark: #213f7d;
+  --color-blue-light: #39cdcc;
+  --color-blue-lighter: #7fe0e0;
+  --color-user-card: #fff;
+  --color-table: #32353f8d;
+  /* --color-badge-text-pending:
+  --color-badge-text-active:
+  --color-badge-text-inactive: 
+  --color-badge-text-blacklisted:
+  --color-badge-bg-pending: #E9B200;
+  --color-badge-bg-active: #39CD62;
+  --color-badge-bg-inactive: #545F7D;
+  --color-badge-bg-blacklisted: #E4033B; */
+  --color-pending: #E9B200;
+  --color-active: #39CD62;
+  --color-inactive: #545F7D;
+  --color-blacklisted: #E4033B;
+}
+
 
 @theme inline {
   --color-background: var(--background);
@@ -99,6 +121,10 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-pending: var(--color-pending);
+  --color-active: var(--color-active);
+  --color-inactive: var(--color-inactive);
+  --color-blacklisted: var(--color-blacklisted);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -119,12 +145,7 @@ body {
 
 }
 
-@theme {
-  --color-blue-dark: #213f7d;
-  --color-blue-light: #39cdcc;
-  --color-blue-lighter: #7fe0e0;
-  --color-user-card: #fff;
-}
+
 
 @layer utilities {
   .max-container {

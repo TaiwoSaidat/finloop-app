@@ -2,9 +2,11 @@
 
 import {
   ColumnDef,
+  ColumnFiltersState,
   SortingState,
   flexRender,
   getCoreRowModel,
+  getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
@@ -25,6 +27,7 @@ import {
 } from "react-icons/md";
 import { useState } from "react";
 import { DataTablePagination } from "./data-table-pagination";
+import { Input } from "./ui/input";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -35,7 +38,8 @@ export function DataTable<TData, TValue>({
   columns,
   data,
 }: DataTableProps<TData, TValue>) {
-  const [sorting, setSorting] = useState<SortingState>([])
+  const [sorting, setSorting] = useState<SortingState>([]);
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
 
   const table = useReactTable({
     data,
@@ -44,15 +48,56 @@ export function DataTable<TData, TValue>({
     getPaginationRowModel: getPaginationRowModel(),
     onSortingChange: setSorting,
     getSortedRowModel: getSortedRowModel(),
+    onColumnFiltersChange: setColumnFilters,
+    getFilteredRowModel: getFilteredRowModel(),
     state: {
       sorting,
-    }
+      columnFilters,
+    },
   });
 
   return (
     <>
-      {/* table */}
-      <div className="rounded-md border">
+      {/* filter form dont forget to perfect */}
+      {/* <div className="flex items-start flex-col py-4"> */}
+        {/* organization */}
+        {/* <Input
+          placeholder="Filter organizations..."
+          value={
+            (table.getColumn("organization")?.getFilterValue() as string) ?? ""
+          }
+          onChange={(event) =>
+            table.getColumn("organization")?.setFilterValue(event.target.value)
+          }
+          className="max-w-sm"
+        /> */}
+        {/* userName */}
+        {/* <Input
+          placeholder="Filter usernames..."
+          value={
+            (table.getColumn("userName")?.getFilterValue() as string) ?? ""
+          }
+          onChange={(event) =>
+            table.getColumn("userName")?.setFilterValue(event.target.value)
+          }
+          className="max-w-sm"
+        /> */}
+        {/* email */}
+        {/* <Input
+          placeholder="Filter emails..."
+          value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
+          onChange={(event) =>
+            table.getColumn("email")?.setFilterValue(event.target.value)
+          }
+          className="max-w-sm"
+        />
+      
+        
+        <Button>Reset</Button>
+        <Button>Filter</Button>  */}
+      {/* </div> */}
+      {/* table  */}
+      <div className=" border-2 border-table shadow-3xl rounded-3xl">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (

@@ -3,9 +3,12 @@ import {
   ChevronLeft,
   ChevronRight,
   ChevronsLeft,
-    ChevronsRight,
-  ChevronDown
+  ChevronsRight,
+  ChevronDown,
 } from "lucide-react";
+
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { CiFilter } from "react-icons/ci";
 
 // import { Button } from "@/registry/new-york-v4/ui/button";
 import { Button } from "@/components/ui/button";
@@ -25,6 +28,7 @@ interface DataTablePaginationProps<TData> {
 export function DataTablePagination<TData>({
   table,
 }: DataTablePaginationProps<TData>) {
+  const pageSize = table.getState().pagination.pageSize;
   return (
     <div className="flex items-center justify-between px-2">
       {/* <div className="text-muted-foreground flex-1 text-sm">
@@ -32,8 +36,7 @@ export function DataTablePagination<TData>({
         {table.getFilteredRowModel().rows.length} row(s) selected.
       </div> */}
 
-      {/* page ---- of 50 change 50 */}
-      <div className="flex items-center space-x-2 bg-red-800">
+      <div className="flex items-center space-x-2 my-2  ">
         <p className="text-sm font-medium">Showing</p>
         <Select
           value={`${table.getState().pagination.pageSize}`}
@@ -44,16 +47,19 @@ export function DataTablePagination<TData>({
           <SelectTrigger className="h-8 w-[70px]">
             <SelectValue placeholder={table.getState().pagination.pageSize} />
           </SelectTrigger>
+
           <SelectContent side="top">
             {[10, 20, 25, 30, 40, 50].map((pageSize) => (
               <SelectItem key={pageSize} value={`${pageSize}`}>
                 {pageSize}
               </SelectItem>
             ))}
-            <ChevronDown className="h-4 w-4 bg-amber-700 text-black" />
           </SelectContent>
         </Select>
-        <p className="text-sm font-medium"> of 50 </p>
+        <p className="text-sm font-medium">
+          {/* of 50 {table.getPageCount()} pages */}
+          of {table.getFilteredRowModel().rows.length}
+        </p>
       </div>
 
       <div className="flex items-center space-x-6 lg:space-x-8">
