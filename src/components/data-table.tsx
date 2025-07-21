@@ -97,7 +97,7 @@ export function DataTable<TData, TValue>({
         <Button>Filter</Button>  */}
       {/* </div> */}
       {/* table  */}
-      <div className=" border-2 border-table shadow-3xl rounded-3xl">
+      <div className=" border-2 border-table shadow-3xl rounded-xl">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (

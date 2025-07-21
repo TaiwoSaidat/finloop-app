@@ -21,7 +21,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
         <div className="flex flex-1  ">
        
           <SideBar isOpen={sideBarOpen}  />
-          <main className="flex-1 overflow-y-auto p-6 w-full border-6 border-green-400">
+          <main className="flex-1 overflow-y-auto p-6 w-full ">
             {children}
           </main>
         </div>

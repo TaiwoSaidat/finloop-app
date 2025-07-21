@@ -22,7 +22,7 @@
   --radius: 0.625rem;
   /* --background: oklch(1 0 0); */
   --background: #32353f8d;
-  /* --foreground: oklch(0.13 0.028 261.692); */
+  /* --foreground: oklch(0.13 0.028 261.692); or 32353f8d*/
   --foreground: #213f7d;
   /* 1 */
   /* --card: oklch(1 0 0);
@@ -73,19 +73,7 @@
   --color-blue-light: #39cdcc;
   --color-blue-lighter: #7fe0e0;
   --color-user-card: #fff;
-  --color-table: #32353f8d;
-  /* --color-badge-text-pending:
-  --color-badge-text-active:
-  --color-badge-text-inactive: 
-  --color-badge-text-blacklisted:
-  --color-badge-bg-pending: #E9B200;
-  --color-badge-bg-active: #39CD62;
-  --color-badge-bg-inactive: #545F7D;
-  --color-badge-bg-blacklisted: #E4033B; */
-  --color-pending: #E9B200;
-  --color-active: #39CD62;
-  --color-inactive: #545F7D;
-  --color-blacklisted: #E4033B;
+  /* --color-table: #32353f8d; */
 }
 
 
