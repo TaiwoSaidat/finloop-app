@@ -16,7 +16,6 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-// import { IoFilter } from "react-icons/io5";
 import { CgSortAz } from "react-icons/cg";
 import { StatusBadgeRow } from "@/components/DashboardComponents/StatusBadgeRow";
 
@@ -133,7 +132,11 @@ export const columns: ColumnDef<UsersProp>[] = [
         </Button>
       );
     },
-    cell: ({ row }) => <StatusBadgeRow status={row.original.status} />,
+    cell: ({ row }) => {
+      const value = row.original.status;
+      console.log("Status value:", value); // 👈 Add this line
+      return <StatusBadgeRow value={value} />;
+    }
   },
   {
     id: "actions",
