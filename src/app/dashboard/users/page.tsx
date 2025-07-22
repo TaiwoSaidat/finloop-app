@@ -1,13 +1,43 @@
+"use client";
 import UserStatsCard from "@/components/DashboardComponents/UserStatsCard";
 import { USERSTATS } from "@/constants";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { DataTable } from "@/components/data-table";
 import { columns } from "./columns";
 import { getUsers } from "@/lib/api";
+import { UsersProp } from "@/types/dashboard";
+import Loading from "../loading";
 
-const page = async () => {
-  const data = await getUsers();
+const page = () => {
+  const [users, setUsers] = useState<UsersProp[]>([]);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const cached = localStorage.getItem("cachedUsers");
+
+      if (cached) {
+        setUsers(JSON.parse(cached));
+        setLoading(false);
+        console.log("Using cached data");
+      } else {
+        try {
+          const data = await getUsers();
+          setUsers(data);
+          localStorage.setItem("cachedUsers", JSON.stringify(data));
+          console.log("Fetching from network");
+        } catch (err) {
+          console.error("Error fetching users", err);
+        } finally {
+          setLoading(false);
+        }
+      }
+    };
+
+    fetchUsers();
+  }, []);
+
+  if (loading) return <Loading />;
   return (
     <>
       <div className=" space-y-8  ">
@@ -32,7 +62,7 @@ const page = async () => {
         </div>
 
         <div className="  ">
-          <DataTable columns={columns} data={data} />
+          <DataTable columns={columns} data={users} />
         </div>
       </div>
     </>

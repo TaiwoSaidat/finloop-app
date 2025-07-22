@@ -134,7 +134,7 @@ export const columns: ColumnDef<UsersProp>[] = [
     },
     cell: ({ row }) => {
       const value = row.original.status;
-      console.log("Status value:", value); // 👈 Add this line
+      // console.log("Status value:", value); // Debugging line to check the value
       return <StatusBadgeRow value={value} />;
     }
   },
