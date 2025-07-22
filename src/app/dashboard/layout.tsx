@@ -11,7 +11,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   };
   return (
     <>
-      <div className="flex flex-col h-screen">
+      <div className="flex flex-col overflow-y-hidden">
         <div className=" flex-1 ">
           <DashboardHeader
             sideBarOpen={sideBarOpen}
@@ -24,7 +24,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
           <main className="flex-1 overflow-y-auto p-6 w-full ">
             {children}
           </main>
-        </div>
+        </div>         
       </div>
     </>
   );

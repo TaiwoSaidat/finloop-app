@@ -6,11 +6,11 @@ import { columns } from "./columns";
 import { getUsers } from "@/lib/api";
 
 const page = async () => {
-  const data = await  getUsers();
+  const data = await getUsers();
 
   return (
     <>
-      <div className=" space-y-8">
+      <div className=" space-y-8  ">
         <p className=" regular-24">Users</p>
         <div className="  flexBetween flex-wrap gap-2">
           {USERSTATS.map((item) => (
