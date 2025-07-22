@@ -21,7 +21,7 @@ const SideBar =  ({ isOpen }: { isOpen: React.ReactNode }) => {
   return (
     <>
       <aside
-        className={`fixed bg-blue-100 md:static top-0 left-0 h-full  w-64 border-2 py-2 transition-transform duration-300 z-40  overflow-y-auto
+        className={`fixed  shadow-2xl md:static top-0 left-0 h-full  w-64 pb-2 pt-6 transition-transform duration-300 z-40  overflow-y-auto
           ${isOpen ? "translate-x-0 " : "-translate-x-full"} md:translate-x-0`}
       >
          <div className="flex gap-4 items-center px-4 md:hidden lg:hidden ">
@@ -31,7 +31,7 @@ const SideBar =  ({ isOpen }: { isOpen: React.ReactNode }) => {
           <p className="regular-20  ">finloop</p>
         </div>
         <div className="space-y-12">
-          <div className="flex items-center space-x-2 small-16 py-2 px-6 hover:opacity-50 hover:bg-blue-light   ">
+          <div className="flex items-center space-x-2 small-16 pt-2 px-6 hover:opacity-50 hover:bg-blue-light   ">
             <RiBriefcase3Fill />
             <span>Switch Organisation</span>
             <IoIosArrowDown />
@@ -48,7 +48,7 @@ const SideBar =  ({ isOpen }: { isOpen: React.ReactNode }) => {
           <div>
             <Link
               href="/dashboard"
-              className=" flex items-center space-x-2 small-16 py-2 px-6 hover:opacity-50 hover:bg-blue-light "
+              className=" flex items-center space-x-2 small-16  px-6 hover:opacity-50 hover:bg-blue-light "
             >
               <MdOutlineHouse />
               <span>Dashboard</span>

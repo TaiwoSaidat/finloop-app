@@ -8,7 +8,7 @@ const page = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    });
   }, []);
 
   return (
@@ -16,10 +16,15 @@ const page = () => {
       {isLoading ? (
         <Loading />
       ) : (
-        <div className=" w-full my-32  flexCenter  ">
-          <p className=" regular-24 uppercase">
-            this is the dashboard page. click{" "}
-            <span className="capitalize">'Users'</span> on sidebar to view Users
+        <div className=" w-full my-32  flexCenter flex-col space-y-3 regular-24 uppercase  ">
+          <p className=" ">This is the dashboard page.</p>
+          <p>
+            {" "}
+            Navigate to{" "}
+            <span className="capitalize ">
+              'Users'
+            </span>{" "}
+            on sidebar to view Users
           </p>
         </div>
       )}

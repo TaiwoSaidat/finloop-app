@@ -16,11 +16,11 @@ const DashboardHeader = ({
 }) => {
   return (
     <>
-      <div className="w-full border-2 grid grid-cols-2 md:grid-cols-3 py-4  items-center ">
+      <div className="w-full border grid grid-cols-2 md:grid-cols-3 py-4        shadow-2xl items-center sticky top-0 z-50 ">
         {/* logo */}
         <div className="flex gap-4 items-center px-4 ">
           <Link href="/dashboard">
-            <Image src={logo} alt="" width={24} height={16}  />
+            <Image src={logo} alt="" width={24} height={16} />
           </Link>
           <p className="regular-20 hidden md:block ">finloop</p>
         </div>
