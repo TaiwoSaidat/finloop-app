@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { CgSortAz } from "react-icons/cg";
 import { StatusBadgeRow } from "@/components/DashboardComponents/StatusBadgeRow";
+import Link from "next/link";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -136,7 +137,7 @@ export const columns: ColumnDef<UsersProp>[] = [
       const value = row.original.status;
       // console.log("Status value:", value); // Debugging line to check the value
       return <StatusBadgeRow value={value} />;
-    }
+    },
   },
   {
     id: "actions",
@@ -153,17 +154,19 @@ export const columns: ColumnDef<UsersProp>[] = [
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             {/* <DropdownMenuLabel> </DropdownMenuLabel> */}
-            <DropdownMenuItem
+            {/* <DropdownMenuItem
               onClick={() => navigator.clipboard.writeText(user.id)}
             >
               Copy user ID
-            </DropdownMenuItem>
+            </DropdownMenuItem> */}
             {/* <DropdownMenuSeparator /> */}
-            <DropdownMenuItem>
-              {/* className="mr-2 h-4 w-4" */}
-              <TiEyeOutline className="h-4 w-4" />
-              View customer
-            </DropdownMenuItem>
+            <Link href={`/dashboard/users/${user.id}`}>
+              <DropdownMenuItem>
+                {/* className="mr-2 h-4 w-4" */}
+                <TiEyeOutline className="h-4 w-4" />
+                View customer
+              </DropdownMenuItem>
+            </Link>
             <DropdownMenuItem>
               <SlUserUnfollow className="h-4 w-4" />
               Blacklist User

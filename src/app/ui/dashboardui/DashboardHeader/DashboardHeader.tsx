@@ -65,7 +65,7 @@ const DashboardHeader = ({
               height={24}
               className=" rounded-2xl "
             />
-            <p className="hidden md:block">Adedeji</p>
+            <p className="hidden md:block">Taiwo</p>
             <IoIosArrowDown className="hidden md:block" />
           </div>
 

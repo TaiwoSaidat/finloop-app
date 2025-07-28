@@ -28,6 +28,8 @@ import {
 import { useState } from "react";
 import { DataTablePagination } from "./data-table-pagination";
 import { Input } from "./ui/input";
+import { UsersProp } from "@/types/dashboard";
+import Link from "next/link";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -60,8 +62,8 @@ export function DataTable<TData, TValue>({
     <>
       {/* filter form dont forget to perfect */}
       {/* <div className="flex items-start flex-col py-4"> */}
-        {/* organization */}
-        {/* <Input
+      {/* organization */}
+      {/* <Input
           placeholder="Filter organizations..."
           value={
             (table.getColumn("organization")?.getFilterValue() as string) ?? ""
@@ -71,8 +73,8 @@ export function DataTable<TData, TValue>({
           }
           className="max-w-sm"
         /> */}
-        {/* userName */}
-        {/* <Input
+      {/* userName */}
+      {/* <Input
           placeholder="Filter usernames..."
           value={
             (table.getColumn("userName")?.getFilterValue() as string) ?? ""
@@ -82,8 +84,8 @@ export function DataTable<TData, TValue>({
           }
           className="max-w-sm"
         /> */}
-        {/* email */}
-        {/* <Input
+      {/* email */}
+      {/* <Input
           placeholder="Filter emails..."
           value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
@@ -120,21 +122,28 @@ export function DataTable<TData, TValue>({
           </TableHeader>
           <TableBody>
             {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
-                <TableRow
-                  key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
-                >
-                  {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              ))
+              table.getRowModel().rows.map((row) => {
+                const user = row.original as UsersProp;
+                return (
+                  <TableRow
+                    key={row.id}
+                    data-state={row.getIsSelected() && "selected"}
+                  >
+                    {" "}
+                    {row.getVisibleCells().map((cell) => (
+                      <TableCell key={cell.id}>
+                        {" "}
+                        <Link href={`/dashboard/users/${user.id}`} key={row.id}>
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext()
+                          )}
+                        </Link>{" "}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                );
+              })
             ) : (
               <TableRow>
                 <TableCell
