@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react'
 
-const notFound = () => {
+const userNotFound = () => {
   return (
     <>
       <div>
@@ -13,4 +13,4 @@ const notFound = () => {
   );
 }
 
-export default notFound
+export default userNotFound
