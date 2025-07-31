@@ -176,11 +176,13 @@ body {
   .small-16 {
     @apply text-[16px] font-[400] leading-[100%];
   }
-
+.small-18 {
+    @apply text-[18px] font-[400] leading-[100%];
+  }
   .regular-14 {
     @apply text-[14px] font-[500] leading-[100%];
   }
-
+  
   .regular-20 {
     @apply text-[20px] font-[400] leading-[40px];
   }

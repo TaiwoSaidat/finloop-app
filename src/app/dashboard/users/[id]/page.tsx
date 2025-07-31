@@ -4,10 +4,18 @@ import { getUserById } from "@/lib/api";
 import Link from "next/link";
 import React from "react";
 import { IoIosArrowRoundBack } from "react-icons/io";
+import UserNotFound from "../../userNotFound";
 
-export default async function Page({ params }: { params: { id: string } }) {
-  const user = await getUserById(params.id);
-  if (!user) return <div>User not found</div>;
+type Props = {
+  params: Promise<{
+    id: string;
+  }>;
+};
+export default async function Page({ params }: Props) {
+  const { id } = await params;
+  const user = await getUserById(id);
+  console.log(id, "awaited param is");
+  if (!user) return <UserNotFound />;
 
   return (
     <>
@@ -31,4 +39,3 @@ export default async function Page({ params }: { params: { id: string } }) {
   );
 }
 
-// export default page;
