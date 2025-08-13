@@ -20,36 +20,23 @@ import { CgSortAz } from "react-icons/cg";
 import { StatusBadgeRow } from "@/components/DashboardComponents/StatusBadgeRow";
 import Link from "next/link";
 
-// This type is used to define the shape of our data.
-// You can use a Zod schema here if you want.
-
-// export type Users = {
-//   id: string;
-//   amount: number;
-//   status: "pending" | "processing" | "success" | "failed";
-//   email: string;
-// };
-
 export const columns: ColumnDef<UsersProp>[] = [
   {
     accessorKey: "organization",
-    // header: "Organization",
     header: ({ column }) => {
       return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          // className="flex w-full justify-start"
-        >
-          Organization
-          <CgSortAz className="h-4 w-4" />
-        </Button>
+          <Button
+            variant="ghost"
+            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+          >
+            Organization
+            <CgSortAz className="h-4 w-4" />
+          </Button>
       );
     },
   },
   {
     accessorKey: "userName",
-    // header: "User Name",
     header: ({ column }) => {
       return (
         <Button
@@ -64,7 +51,6 @@ export const columns: ColumnDef<UsersProp>[] = [
   },
   {
     accessorKey: "email",
-    // header: "Email",
     header: ({ column }) => {
       return (
         <Button
@@ -79,7 +65,6 @@ export const columns: ColumnDef<UsersProp>[] = [
   },
   {
     accessorKey: "phoneNumber",
-    // header: "Phone Number",
     header: ({ column }) => {
       return (
         <Button
@@ -94,7 +79,6 @@ export const columns: ColumnDef<UsersProp>[] = [
   },
   {
     accessorKey: "createdAt",
-    // header: () => <div>Date Joined</div>,
     header: ({ column }) => {
       return (
         <Button
@@ -118,10 +102,8 @@ export const columns: ColumnDef<UsersProp>[] = [
       return <div className="text-right font-medium">{formatted}</div>;
     },
   },
-  //   don't forget to change to status
   {
     accessorKey: "status",
-    // header: "Name",
     header: ({ column }) => {
       return (
         <Button
@@ -162,7 +144,6 @@ export const columns: ColumnDef<UsersProp>[] = [
             {/* <DropdownMenuSeparator /> */}
             <Link href={`/dashboard/users/${user.id}`}>
               <DropdownMenuItem>
-                {/* className="mr-2 h-4 w-4" */}
                 <TiEyeOutline className="h-4 w-4" />
                 View customer
               </DropdownMenuItem>

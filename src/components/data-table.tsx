@@ -61,9 +61,9 @@ export function DataTable<TData, TValue>({
   return (
     <>
       {/* filter form dont forget to perfect */}
-      {/* <div className="flex items-start flex-col py-4"> */}
+      <div className="flex items-start flex-col py-4">
       {/* organization */}
-      {/* <Input
+      <Input
           placeholder="Filter organizations..."
           value={
             (table.getColumn("organization")?.getFilterValue() as string) ?? ""
@@ -72,34 +72,10 @@ export function DataTable<TData, TValue>({
             table.getColumn("organization")?.setFilterValue(event.target.value)
           }
           className="max-w-sm"
-        /> */}
-      {/* userName */}
-      {/* <Input
-          placeholder="Filter usernames..."
-          value={
-            (table.getColumn("userName")?.getFilterValue() as string) ?? ""
-          }
-          onChange={(event) =>
-            table.getColumn("userName")?.setFilterValue(event.target.value)
-          }
-          className="max-w-sm"
-        /> */}
-      {/* email */}
-      {/* <Input
-          placeholder="Filter emails..."
-          value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
-          onChange={(event) =>
-            table.getColumn("email")?.setFilterValue(event.target.value)
-          }
-          className="max-w-sm"
         />
-      
-        
-        <Button>Reset</Button>
-        <Button>Filter</Button>  */}
-      {/* </div> */}
+    
+      </div>
       {/* table  */}
-      {/* border-2 border-table */}
       <div className=" border shadow-2xl rounded-xl bg-card">
         <Table>
           <TableHeader>
@@ -129,16 +105,14 @@ export function DataTable<TData, TValue>({
                     key={row.id}
                     data-state={row.getIsSelected() && "selected"}
                   >
-                    {" "}
                     {row.getVisibleCells().map((cell) => (
                       <TableCell key={cell.id}>
-                        {" "}
                         <Link href={`/dashboard/users/${user.id}`} key={row.id}>
                           {flexRender(
                             cell.column.columnDef.cell,
                             cell.getContext()
                           )}
-                        </Link>{" "}
+                        </Link>
                       </TableCell>
                     ))}
                   </TableRow>
@@ -159,25 +133,6 @@ export function DataTable<TData, TValue>({
       </div>
 
       {/* pagination */}
-      {/* <div className="flex items-center justify-end space-x-2 py-4">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
-          <MdOutlineArrowBackIosNew />
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
-        >
-          <MdOutlineArrowForwardIos />
-        </Button>
-      </div> */}
-      {/* pagination again? */}
       <DataTablePagination table={table} />
     </>
   );

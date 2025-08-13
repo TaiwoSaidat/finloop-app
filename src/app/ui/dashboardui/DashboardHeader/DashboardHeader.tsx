@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -6,6 +7,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import search from "../../../../assets/search.png";
 import bell from "@/assets/bell.png";
 import profile from "@/assets/profile.png";
+// import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const DashboardHeader = ({
   sideBarOpen,
@@ -14,6 +16,14 @@ const DashboardHeader = ({
   sideBarOpen: boolean;
   toggleSideBar: () => void;
 }) => {
+  // const searchParams = useSearchParams();
+  // const { replace } = useRouter();
+  // const pathname = usePathname();
+  // const params = new URLSearchParams(searchParams?.toString());
+  // params.set("test", "value");
+  // replace(`${pathname}?${params}`);
+  // console.log(searchParams);
+  // console.log(pathname);
   return (
     <>
       <div className="w-full border-2 grid grid-cols-2 md:grid-cols-3 py-4        shadow-2xl items-center  ">

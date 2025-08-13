@@ -9,7 +9,7 @@ import { IconType } from "react-icons";
 // }
 // Props for customer, business and settings sidebar items
 export type CustomerProps = {
-    id: number;
+  id: number;
   title: string;
   path: string;
   icon: IconType;
@@ -36,6 +36,12 @@ export type UsersProp = {
   phoneNumber: string;
   status: "pending" | "processing" | "success" | "failed";
   id: string;
+  userId: string;
+  bankName: string;
+  bankAccount: string;
+  accountName: string;
+  loanAmount: string;
+  currency: string;
   // address: string;
   // updatedAt: string;
 };
@@ -53,7 +59,3 @@ export type UsersProp = {
 //   path?: string;
 //   icon?: IconType;
 // };
-
-
-
-

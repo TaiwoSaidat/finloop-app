@@ -17,9 +17,10 @@ const UserBar = ({ user }: Props) => {
             className="rounded-full"
           />
           <div className="ml-2">
-            <div >
+            <div>
               <h2 className="font-semibold">{user?.name}</h2>
               <p className="text-sm text-gray-500">{user?.email}</p>
+              <p className="">{user.loanAmount}</p>
             </div>
           </div>
         </div>

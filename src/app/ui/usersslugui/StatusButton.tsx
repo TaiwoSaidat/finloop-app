@@ -36,7 +36,7 @@ const StatusButton = () => {
               key={status.value}
               variant="outline"
               className={clsx(
-                " bg-gray-400 rounded-lg hover:bg-card-foreground w-2xs ",
+                " bg-gray-400 rounded-lg hover:bg-card-foreground md:w-[10rem] lg:w-[16rem]",
                 StatusStyles[status.value as keyof typeof StatusStyles]
               )}
             >
