@@ -13,7 +13,7 @@
 //     // <div className="">
 //       <span
 //         className={clsx(
-//           "py-1.5 px-3 rounded-full small-12  capitalize",
+//           "py-1.5 px-3 rounded-full regular-12  capitalize",
 //           statusStyles[status as keyof typeof statusStyles] ||
 //             "bg-gray-100 text-gray-800  "
 //         )}

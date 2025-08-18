@@ -42,6 +42,11 @@ export type UsersProp = {
   accountName: string;
   loanAmount: string;
   currency: string;
+  bvn: string;
+  gender: string;
+  maritalStatus: boolean;
+  children: string;
+  residence: string;
   // address: string;
   // updatedAt: string;
 };

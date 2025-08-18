@@ -170,7 +170,7 @@ body {
   }
 
   .small-12 {
-    @apply text-[12px] font-[500] leading-[100%];
+    @apply text-[12px] font-[400] leading-[100%];
   }
 
   .small-16 {
@@ -188,10 +188,17 @@ body {
    .small-24 {
     @apply text-[24px] font-[400] leading-[100%];
   }
+
+    .regular-12 {
+    @apply text-[12px] font-[500] leading-[100%];
+  }
+
   .regular-14 {
     @apply text-[14px] font-[500] leading-[100%];
   }
- 
+  .regular-16 {
+    @apply text-[16px] font-[500] leading-[100%];
+  }
   
   .regular-20 {
     @apply text-[20px] font-[400] leading-[40px];

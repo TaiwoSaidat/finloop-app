@@ -68,7 +68,7 @@ export default async function Page({ params }: Props) {
             <div className="  w-px bg-gray-400 md:min-h-22 "></div>
             <div className="  p-2 w-full flexCenter flex-col gap-2 regular-14 ">
               <p className="regular-20 ">
-                <span className="line-through ">Njjjj</span>
+                <span className="line-through ">N</span>
                 {/* {user?.currency} */}
                 {user?.loanAmount}
               </p>
@@ -79,15 +79,63 @@ export default async function Page({ params }: Props) {
           </div>
           <div className="flexBetween">
             <p className="">General Details</p>
-            <p className="hidden">Documents</p>
-            <p className="hidden">Bank Details</p>
-            <p className="hidden">Loans</p>
-            <p className="hidden">Savings</p>
-            <p className="hidden">Apps and System</p>
+            <p className="">Documents</p>
+            <p className="">Bank Details</p>
+            <p className="">Loans</p>
+            <p className="">Savings</p>
+            <p className="">Apps and System</p>
           </div>
         </div>
 
-       
+        <div className="bg-card shadow-2xl p-6 rounded space-y-4">
+          <div className="">
+            <p className="regular-16">Personal Information</p>
+            <div className=" grid grid-cols-1 lg:grid-cols-5 py-2 space-y-4">
+              <div className=" space-y-2 ">
+                <p className=" small-12 border bg-white ">Full Name</p>
+                <p className="regular-16 border">{user?.name}</p>
+              </div>
+              <div className="space-y-2 ">
+                <p className=" small-12 border bg-white ">Phone Number</p>
+                <p className="regular-16 border">{user?.phoneNumber}</p>
+              </div>
+              <div className="space-y-2 ">
+                <p className=" small-12 border bg-white ">Email Address</p>
+                <p className="regular-16 border">{user?.email}</p>
+              </div>
+              <div className="space-y-2 ">
+                <p className=" small-12 border bg-white ">BVN</p>
+                <p className="regular-16 border">{user?.bvn}</p>
+              </div>
+              <div className="space-y-2 ">
+                <p className=" small-12 border bg-white ">Gender</p>
+                <p className="regular-16 border">{user?.gender}</p>
+              </div>
+              <div className="space-y-2 ">
+                <p className=" small-12 border bg-white ">Marital Status</p>
+                <p className="regular-16 border">{user?.maritalStatus}</p>
+              </div>
+              <div className="space-y-2 ">
+                <p className=" small-12 border bg-white ">Children</p>
+                <p className="regular-16 border">{user?.children}</p>
+              </div>
+              <div className="space-y-2 ">
+                <p className=" small-12 border bg-white ">Type of Residence</p>
+                <p className="regular-16 border">{user?.residence}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="">
+            <p className="regular-16">Education and Employment</p>
+          </div>
+          <div className="">
+            <p className="regular-16">Socials</p>
+          </div>
+          <div className="">
+            <p className="regular-16">Guarantor(s)</p>
+          </div>
+        </div>
         {/* user bar */}
         {/* <UserBar user={user} /> */}
       </div>

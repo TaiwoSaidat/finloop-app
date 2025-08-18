@@ -57,7 +57,7 @@ const SideBar =  ({ isOpen }: { isOpen: React.ReactNode }) => {
         </div>
         <div className="space-y-4 my-4 py-2">
           <div className="flex flex-col   space-y-8  ">
-            <h2 className="small-12 px-6 ">CUSTOMERS</h2>
+            <h2 className="regular-12 px-6 ">CUSTOMERS</h2>
             <ol className="small-16 space-y-2">
               {CUSTOMERS.map((item: CustomerProps) => {
                 const Icon = item.icon;
@@ -79,7 +79,7 @@ const SideBar =  ({ isOpen }: { isOpen: React.ReactNode }) => {
           </div>
 
           <div className="flex flex-col   space-y-8  ">
-            <h2 className="small-12 px-6  ">BUSINESSES</h2>
+            <h2 className="regular-12 px-6  ">BUSINESSES</h2>
             <ol className="small-16 space-y-2">
               {BUSINESSES.map((item: CustomerProps) => {
                 const Icon = item.icon;
@@ -101,7 +101,7 @@ const SideBar =  ({ isOpen }: { isOpen: React.ReactNode }) => {
           </div>
 
           <div className="flex flex-col   space-y-8  ">
-            <h2 className="small-12 px-6  ">SETTINGS</h2>
+            <h2 className="regular-12 px-6  ">SETTINGS</h2>
             <ol className="small-16 space-y-2">
               {SETTINGS.map((item: CustomerProps) => {
                 const Icon = item.icon;
