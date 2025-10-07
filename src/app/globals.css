@@ -21,7 +21,8 @@
   /* --background: #7fe0e0; */
   --radius: 0.625rem;
   /* --background: oklch(1 0 0); */
-  --background: #32353f8d;
+  /* --background: #32353f8d; */
+  --background: #fff;
   /* --foreground: oklch(0.13 0.028 261.692); or 32353f8d*/
   --foreground: #213f7d;
   /* 1 */
@@ -37,7 +38,7 @@
   /* 2 */
   --card: var(--color-background);
   --card-foreground: var(--color-foreground);
-  --popover: #32353f8d;
+  --popover: #fff;
   --popover-foreground: #213f7d;
   --primary: #32353f8d;
   --primary-foreground: #213f7d;

@@ -10,45 +10,34 @@ import { RiBriefcase3Fill } from "react-icons/ri";
 import { IoIosArrowDown } from "react-icons/io";
 // import { getUsers } from "@/lib/api";
 
-const SideBar =  ({ isOpen }: { isOpen: React.ReactNode }) => {
-//   const data = await getUsers()
-//   const organizations = [...new Set(data.map((user: any) => user.organization))];
-//  console.log(organizations)
+const SideBar = ({ isOpen }: { isOpen: React.ReactNode }) => {
+  //   const data = await getUsers()
+  //   const organizations = [...new Set(data.map((user: any) => user.organization))];
+  //  console.log(organizations)
 
- 
-
-  
   return (
     <>
       <aside
-        className={`fixed  shadow-2xl md:static top-0 left-0 h-full  w-64 pb-2 pt-6 transition-transform duration-300 z-40  overflow-y-auto
+        className={`fixed bg-sidebar shadow-2xl md:static top-0 left-0 h-full  w-64 pb-2 pt-6 transition-transform duration-300 z-40  overflow-y-auto
           ${isOpen ? "translate-x-0 " : "-translate-x-full"} md:translate-x-0`}
       >
-         <div className="flex gap-4 items-center px-4 md:hidden lg:hidden ">
+        <div className="flex gap-4 items-center px-4 md:hidden lg:hidden ">
           <Link href="/dashboard">
-            <Image src={logo} alt="" width={24} height={16}  />
+            <Image src={logo} alt="" width={24} height={16} />
           </Link>
           <p className="regular-20  ">finloop</p>
         </div>
         <div className="space-y-12">
-          <div className="flex items-center space-x-2 small-16 pt-2 px-6 hover:opacity-50 hover:bg-blue-light   ">
+          <div className="flex items-center space-x-2 small-16 py-2 px-6 hover:opacity-50 hover:bg-blue-light   ">
             <RiBriefcase3Fill />
             <span>Switch Organisation</span>
             <IoIosArrowDown />
           </div>
 
-          {/* {
-            organizations.map((org: any, index) => (
-              
-                <span>{org}</span>
-             
-            ))
-          } */}
-
           <div>
             <Link
               href="/dashboard"
-              className=" flex items-center space-x-2 small-16  px-6 hover:opacity-50 hover:bg-blue-light "
+              className=" flex items-center space-x-2 small-16 py-2 px-6 hover:opacity-50 hover:bg-blue-light "
             >
               <MdOutlineHouse />
               <span>Dashboard</span>
@@ -120,6 +109,12 @@ const SideBar =  ({ isOpen }: { isOpen: React.ReactNode }) => {
                 );
               })}
             </ol>
+          </div>
+
+          <div className=" small-16 space-y-8 py-2 px-6 hover:opacity-50 hover:bg-blue-light ">
+            <Link href="/">
+              <p className=""> Back to login page</p>
+            </Link>
           </div>
         </div>
       </aside>

@@ -20,11 +20,8 @@ const page = () => {
           <p className=" ">This is the dashboard page.</p>
           <p>
             {" "}
-            Navigate to{" "}
-            <span className="capitalize ">
-              'Users'
-            </span>{" "}
-            on sidebar to view Users
+            Navigate to <span className="capitalize ">'Users'</span> on sidebar
+            to view Users
           </p>
         </div>
       )}

@@ -60,10 +60,9 @@ export function DataTable<TData, TValue>({
 
   return (
     <>
-      {/* filter form dont forget to perfect */}
       <div className="flex items-start flex-col py-4">
-      {/* organization */}
-      <Input
+        {/* organization */}
+        <Input
           placeholder="Filter organizations..."
           value={
             (table.getColumn("organization")?.getFilterValue() as string) ?? ""
@@ -73,10 +72,9 @@ export function DataTable<TData, TValue>({
           }
           className="max-w-sm"
         />
-    
       </div>
       {/* table  */}
-      <div className=" border shadow-2xl rounded-xl bg-card">
+      <div className=" border shadow-2xl rounded-xl bg-card ">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (

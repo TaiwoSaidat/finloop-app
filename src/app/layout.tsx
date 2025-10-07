@@ -20,7 +20,7 @@ const workSans = Work_Sans({
 export const metadata: Metadata = {
   title: "Finloop",
   description:
-    "Is a loan management platform designed for lenders, such as microfinance institutions, banks, and digital lenders.",
+    "This is a loan management platform designed for lenders, such as microfinance institutions, banks, and digital lenders.",
 };
 
 export default function RootLayout({
