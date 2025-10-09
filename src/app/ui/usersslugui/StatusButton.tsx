@@ -22,21 +22,16 @@ const StatusStyles = {
 };
 
 const StatusButton = () => {
-  // const className =
-  //   statusStyles[normalizedValue as keyof typeof statusStyles] ??
-  //   " bg-blue-light text-gray-800 border border-gray-300";
-
   return (
     <>
       <div className="  gap-2 flex flex-col items-center md:flex-row  p-2 rounded-2xl">
-        {/* <span className="gap-2 w-full border border-purple-700  "> */}
         {STATUS.map((status: StatusProp) => {
           return (
             <Button
               key={status.value}
               variant="outline"
               className={clsx(
-                " bg-gray-400 rounded-lg hover:bg-card-foreground md:w-[10rem] lg:w-[16rem]",
+                " bg-card/50 rounded-lg hover:bg-card-foreground md:w-[10rem] lg:w-[16rem]",
                 StatusStyles[status.value as keyof typeof StatusStyles]
               )}
             >
@@ -44,7 +39,6 @@ const StatusButton = () => {
             </Button>
           );
         })}
-        {/* </span> */}
       </div>
     </>
   );

@@ -5,8 +5,8 @@ import { UsersProp } from "@/types/dashboard";
 import { IoMdMore } from "react-icons/io";
 import { TiEyeOutline } from "react-icons/ti";
 import { SlUserUnfollow, SlUserFollowing, SlUserFollow } from "react-icons/sl";
-import { HiUserAdd } from "react-icons/hi";
-import { TbUserCancel, TbUserBolt } from "react-icons/tb";
+// import { HiUserAdd } from "react-icons/hi";
+// import { TbUserCancel, TbUserBolt } from "react-icons/tb";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -99,7 +99,7 @@ export const columns: ColumnDef<UsersProp>[] = [
         hour: "2-digit",
         minute: "2-digit",
       });
-      return <div className="text-right font-medium">{formatted}</div>;
+      return <div className="text-right ">{formatted}</div>;
     },
   },
   {
