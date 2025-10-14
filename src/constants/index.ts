@@ -3,7 +3,6 @@ import { HiUser, HiUsers } from "react-icons/hi2";
 import { FaRegHandshake, FaUsers } from "react-icons/fa";
 import { GiReceiveMoney } from "react-icons/gi";
 import users from "@/assets/users1.png";
-// import a from '@/assets/'
 import loans from "@/assets/usersLoan.png";
 import savings from "@/assets/userSavings.png";
 import active from "@/assets/activeUsers1.png";

@@ -34,7 +34,7 @@ export type UsersProp = {
   organization: string;
   userName: string;
   phoneNumber: string;
-  status: "pending" | "processing" | "success" | "failed";
+  status: "pending" | "inactive" | "active" | "blacklisted";
   id: string;
   userId: string;
   bankName: string;
@@ -44,11 +44,11 @@ export type UsersProp = {
   currency: string;
   bvn: string;
   gender: string;
-  maritalStatus: 'married' | 'single' | 'divorced';
+  maritalStatus: "married" | "single" | "divorced";
   children: string;
   residence: string;
-  educationLevel: 'SSCE' | 'B.Sc' | 'M.Sc' | 'PhD' | 'HND' | 'OND';
-  employmentStatus: 'employed' | 'unemployed' | 'self-employed';
+  educationLevel: "SSCE" | "B.Sc" | "M.Sc" | "PhD" | "HND" | "OND";
+  employmentStatus: "employed" | "unemployed" | "self-employed";
   sector: string;
   duration: number;
   officeEmail: string;

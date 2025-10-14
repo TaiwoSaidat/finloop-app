@@ -1,17 +1,17 @@
 import StatusButton from "@/app/ui/usersslugui/StatusButton";
-import UserBar from "@/app/ui/usersslugui/UserBar";
+// import UserBar from "@/app/ui/usersslugui/UserBar";
 import { getUserById } from "@/lib/api";
 import Link from "next/link";
 import React from "react";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import UserNotFound from "../../userNotFound";
 import Image from "next/image";
-import { CiStar } from "react-icons/ci";
+// import { CiStar } from "react-icons/ci";
 import { IoStarOutline } from "react-icons/io5";
 import { IoStarSharp } from "react-icons/io5";
 import { IoStar } from "react-icons/io5";
-import { FaStar } from "react-icons/fa6";
-import { UsersProp } from "@/types/dashboard";
+// import { FaStar } from "react-icons/fa6";
+// import { UsersProp } from "@/types/dashboard";
 
 type Props = {
   params: Promise<{
@@ -41,8 +41,6 @@ export default async function Page({ params }: Props) {
 
         <div className="bg-card shadow-2xl px-6 pt-8 rounded space-y-6">
           {/* user bar */}
-          {/* grid grid-cols-1 justify-center md:grid-cols-4  gap-4      */}
-          {/* <div className="flexCenter flex-col md:flex-row md:flex-wrap space-y-2 md:space-x-4"> */}
           <div className="  flexCenter flex-col md:flex-row space-y-2 md:space-x-4 ">
             <Image
               src={user?.avatar}

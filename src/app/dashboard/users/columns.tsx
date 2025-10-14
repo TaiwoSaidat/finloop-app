@@ -116,8 +116,12 @@ export const columns: ColumnDef<UsersProp>[] = [
       );
     },
     cell: ({ row }) => {
-      const value = row.original.status;
-      // console.log("Status value:", value); // Debugging line to check the value
+      const value =
+        row.original.status ||
+        (["pending", "inactive", "active", "blacklisted"][
+          Math.floor(Math.random() * 4)
+        ] as "pending" | "inactive" | "active" | "blacklisted");
+      console.log("Status value:", value); // Debugging line to check the value
       return <StatusBadgeRow value={value} />;
     },
   },
@@ -162,3 +166,4 @@ export const columns: ColumnDef<UsersProp>[] = [
     },
   },
 ];
+
