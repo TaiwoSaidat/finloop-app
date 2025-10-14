@@ -14,24 +14,16 @@ const page = () => {
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const cached = localStorage.getItem("cachedUsers");
-
-      if (cached) {
-        setUsers(JSON.parse(cached));
-        setLoading(false);
-        console.log("Using cached data");
-      } else {
-        try {
-          const data = await getUsers();
-          setUsers(data);
-          localStorage.setItem("cachedUsers", JSON.stringify(data));
-          console.log("Fetching from network");
-        } catch (err) {
-          console.error("Error fetching users", err);
-        } finally {
-          setLoading(false);
-        }
-      }
+       try {
+         const data = await getUsers();
+         setUsers(data);
+         localStorage.setItem("cachedUsers", JSON.stringify(data));
+         console.log("Fetching from network");
+       } catch (err) {
+         console.error("Error fetching users", err);
+       } finally {
+         setLoading(false);
+       }
     };
 
     fetchUsers();

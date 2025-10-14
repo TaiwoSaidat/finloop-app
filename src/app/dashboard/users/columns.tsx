@@ -121,7 +121,7 @@ export const columns: ColumnDef<UsersProp>[] = [
         (["pending", "inactive", "active", "blacklisted"][
           Math.floor(Math.random() * 4)
         ] as "pending" | "inactive" | "active" | "blacklisted");
-      console.log("Status value:", value); // Debugging line to check the value
+      console.log("Status value:", value); 
       return <StatusBadgeRow value={value} />;
     },
   },
